@@ -1,0 +1,25 @@
+/* Import Fonts */
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower); /* font-family: 'Indie Flower', cursive; */
+@import url(http://fonts.googleapis.com/css?family=Lora); /* font-family: 'Lora', serif; */
+
+/* Import Semantic */
+@import url(semantic.min.css);
+
+
+
+
+body {
+	padding: 1em;
+}
+.color.grid {
+	margin: -1.5em;
+	width: 400px;
+}
+.ui.table {
+	table-layout: fixed;
+}
+.color.grid .column {
+	margin: 0.5em;
+	width: 50px;
+	height: 50px;
+}
