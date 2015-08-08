@@ -1,4 +1,4 @@
-# CV
+# Chen Shi
 
-Test url:
+Check Chen Shi's personal Website:
 http://chenshi616.github.io/
