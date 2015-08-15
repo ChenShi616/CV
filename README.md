@@ -1,4 +1,4 @@
-# Chen Shi
+# Shi Chen
 
-Check Chen Shi's personal Website:
+Check Shi Chen's personal Website:
 http://chenshi616.github.io/

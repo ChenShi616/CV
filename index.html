@@ -6,20 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>Chen Shi</title>
+    <title>Shi Chen</title>
 
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link href="css/normalize.css" rel='stylesheet' type='text/css'>
     <script src="js/jquery.min.js"></script>
     <script src="js/pace.min.js"></script>
-    <script src="js/semantic.min.js"></script>
     <script src="js/snap.svg-min.js"></script>
   </head>
 
   <body>
 
     <div id="pagewrap" class="pagewrap">
-      <div class="container show" id="page-1">
+      <div class="page-container show" id="page-1">
         <div class="content">
           <img src="images/chenshi-logo.png" class="animated fadeInUp" />
           <h1 class="animated fadeInUp">Hi! I'm Shi Chen.<br>I'm a Passionate, Creatve Front-End Designer & Engineer.</h1>
@@ -34,14 +33,13 @@
       </div><!-- /container -->
 
       <!-- The new page dummy; this would be dynamically loaded content -->
-      <div class="container" id="page-2">
+      <div class="page-container" id="page-2">
         <div class="ui main text container">
-          <h1 class="ui header">Chen Shi</h1>
-          <p>A Passionate, Creatve Front-End Designer & Engineer</p>
+          <h1 class="ui header chenshi-name">Shi Chen</h1>
+          <p class="chenshi-intro">A Passionate, Creatve Front-End Designer & Engineer</p>
         </div>
 
-
-        <div class="ui borderless main menu">
+        <div id="menu" class="ui borderless main menu">
           <div class="ui text container">
             <div href="#" class="header item">
               <img class="logo" src="images/chenshi-logo.png">
@@ -53,16 +51,78 @@
           </div>
         </div>
 
-        <div class="ui text container">
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
-          <div class="overlay">
-            <div class="ui labeled icon vertical menu">
-              <a class="item"><i class="twitter icon"></i> Tweet</a>
-              <a class="item"><i class="facebook icon"></i> Share</a>
-              <a class="item"><i class="mail icon"></i> E-mail</a>
+        <div class="ui  container">
+
+          <div class="ui three column doubling grid container">
+
+            <div class="column">
+              <div class="ui card">
+                <div class="blurring dimmable image">
+                  <div class="ui dimmer">
+                    <div class="content">
+                      <div class="center">
+                        <div class="ui inverted button">Call to Action</div>
+                      </div>
+                    </div>
+                  </div>
+                  <img src="images/avatar/tom.jpg">
+                </div>
+                <div class="content">
+                  <a class="header">Name</a>
+                  <div class="meta">
+                    <span class="date">Date</span>
+                  </div>
+                  <div class="description">Kristy is an art director living in New York. </div>
+                </div>
+              </div>
             </div>
+
+            <div class="column">
+              <div class="ui card">
+                <div class="blurring dimmable image">
+                  <div class="ui dimmer">
+                    <div class="content">
+                      <div class="center">
+                        <div class="ui inverted button">Call to Action</div>
+                      </div>
+                    </div>
+                  </div>
+                  <img src="images/avatar/tom.jpg">
+                </div>
+                <div class="content">
+                  <a class="header">Name</a>
+                  <div class="meta">
+                    <span class="date">Date</span>
+                  </div>
+                  <div class="description">Kristy is an art director living in New York. </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="ui card">
+                <div class="blurring dimmable image">
+                  <div class="ui dimmer">
+                    <div class="content">
+                      <div class="center">
+                        <div class="ui inverted button">Call to Action</div>
+                      </div>
+                    </div>
+                  </div>
+                  <img src="images/avatar/nan.jpg">
+                </div>
+                <div class="content">
+                  <a class="header">Name</a>
+                  <div class="meta">
+                    <span class="date">Date</span>
+                  </div>
+                  <div class="description">Kristy is an art director living in New York. </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+
         </div>
       </div><!-- /container -->
 
@@ -76,28 +136,12 @@
 
     <script src="js/classie.js"></script>
     <script src="js/svgLoader.js"></script>
+    <script src="js/semantic.min.js"></script>
     <script>
       $(function() {
 
-        // fix main menu to page on passing
-        $('.main.menu').visibility({
-          type: 'fixed'
-        });
-
-        $('.overlay').visibility({
-          type: 'fixed',
-          offset: 80
-        });
-
-        // lazy load images
-        $('.image').visibility({
-          type: 'image',
-          transition: 'vertical flip in',
-          duration: 500
-        });
-
         var pageWrap = document.getElementById( 'pagewrap' ),
-          pages = [].slice.call( pageWrap.querySelectorAll( 'div.container' ) ),
+          pages = [].slice.call( pageWrap.querySelectorAll( 'div.page-container' ) ),
           currentPage = 0,
           loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 700, easingIn : mina.easeinout } );
 
@@ -111,6 +155,27 @@
             // update..
             currentPage = currentPage ? 0 : 1;
             classie.addClass( pages[ currentPage ], 'show' );
+
+            // fix main menu to page on passing
+            $('#menu').visibility({
+              type: 'fixed'
+            });
+
+            $('.overlay').visibility({
+              type: 'fixed',
+              offset: 80
+            });
+
+            // lazy load images
+            $('.image').visibility({
+              type: 'image',
+              transition: 'vertical flip in',
+              duration: 500
+            });
+
+            $('.card .dimmer').dimmer({
+              on: 'hover'
+            });
 
           }, 800 );
         }, 4000 );
